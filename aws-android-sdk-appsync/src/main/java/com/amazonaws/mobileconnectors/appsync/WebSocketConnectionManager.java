@@ -136,6 +136,7 @@ final class WebSocketConnectionManager {
         Request request = new Request.Builder()
             .url(requestUrl)
             .addHeader("Sec-WebSocket-Protocol", "graphql-ws")
+            .addHeader("User-Agent", System.getProperty("http.agent"))
             .build();
 
         websocket = new OkHttpClient.Builder()
